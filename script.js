@@ -8,6 +8,8 @@ const ourField = document.querySelector('.our-field')
 const pointsNeeded = document.querySelector('.points-needed')
 //12
 const mistakesAllowed = document.querySelector('.mistakes-allowed')
+//17
+const progressBar = document.querySelector('.progress-inner')
 
 //3
 let state = {
@@ -69,6 +71,10 @@ function handleSubmit(e) {
     
     //9.4.3 --- 13
     updateProblem();
+    
+    //18
+    // progressBar.style.transform = `scaleX(${state.score / 10})`
+    renderProgressBar()
   } else{
      // alert('tryAgain');
     //9.4.2
@@ -103,4 +109,10 @@ function resetGame() {
   state.wrongAnswer = 0;
   pointsNeeded.textContent = 10
   mistakesAllowed.textContent = 2
+  //19
+  renderProgressBar()
+}
+// 20
+function renderProgressBar() {
+  progressBar.style.transform = `scaleX(${state.score / 10})`
 }
