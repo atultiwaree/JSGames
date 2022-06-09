@@ -10,6 +10,12 @@ const pointsNeeded = document.querySelector('.points-needed')
 const mistakesAllowed = document.querySelector('.mistakes-allowed')
 //17
 const progressBar = document.querySelector('.progress-inner')
+// 21
+const endMessage = document.querySelector('.end-message')
+//23
+const resetButton = document.querySelector('.reset-button')
+
+
 
 //3
 let state = {
@@ -44,7 +50,7 @@ function generateProblem() {  //Returning Object
   }
 }
 
-// console.log(generateProblem())
+console.log(generateProblem())
 
 //8 {weather clicks our inputing somehting applied to both}
 ourForm.addEventListener("submit", handleSubmit)
@@ -90,20 +96,34 @@ function handleSubmit(e) {
 function checkLogic() {
   //If you won
    if( state.score === 10) {
-     alert("Win")
-     resetGame()
+     // alert("Win")
+     // 22
+     endMessage.textContent = "Congrats! You won."
+     document.body.classList.add("overlay-is-open")
+     setTimeout(() => resetButton.focus(), 900)
+     // resetGame()
    }
   
  //If you Lost
   if (state.wrongAnswer === 3){
-    alert("Lost")
-    resetGame()
+    // alert("Lost")
+    // 22
+    endMessage.textContent = "Sorry! you lost"
+    document.body.classList.add("overlay-is-open")
+    setTimeout(() => resetButton.focus(), 900)
+
+    // resetGame()
   }
   
 }
+// 24
+
+resetButton.addEventListener("click", resetGame)
+                             
 
 // 16
 function resetGame() {
+  document.body.classList.remove("overlay-is-open")
   updateProblem()
   state.score = 0;
   state.wrongAnswer = 0;
