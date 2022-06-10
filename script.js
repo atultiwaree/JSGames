@@ -15,8 +15,6 @@ const endMessage = document.querySelector('.end-message')
 //23
 const resetButton = document.querySelector('.reset-button')
 
-
-
 //3
 let state = {
   score : 0,
@@ -86,6 +84,8 @@ function handleSubmit(e) {
     //9.4.2
     state.wrongAnswer++
     mistakesAllowed.textContent = 2 - state.wrongAnswer;
+    problemElement.classList.add("animate-wrong")
+    setTimeout(() => problemElement.classList.remove("animate-wrong"), 500)
   }
   
   //14

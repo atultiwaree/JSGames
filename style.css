@@ -1,3 +1,7 @@
+body, html {
+  font-family: 'Kdam Thmor Pro',       sans-serif;
+}
+
 .boxes {
   display : flex;
   width : 100%;
@@ -46,4 +50,49 @@ body.overlay-is-open .overlay{
 }
 body.overlay-is-open .main-ui{
   filter : blur(4px);
+}
+.our-field {
+   padding : 10px 5px;
+   font-size : 20px;
+   max-width : 80px;
+}
+.problem {
+  font-size : 25px;
+}
+
+
+.my-button {
+    padding : 10px; 10px;
+    font-size : 20px;
+    
+}
+@keyframes showError{
+  50%{
+    color : red;
+    transform : scale(1.2);
+  }
+  100%{
+    color : #333;
+    transform : scale(1);
+  }
+}
+.animate-wrong {
+  color : red;
+  animation : .33s showError;
+}
+
+.problem {
+  text-align : center;
+  font-size : 2rem;
+}
+.our-form {
+  display : flex;
+  justify-content: center;
+}
+.notify {
+  text-align : center;
+  color : grey;
+}
+.notify span {
+    color : black;
 }
