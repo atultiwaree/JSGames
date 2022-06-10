@@ -83,6 +83,7 @@ function handleSubmit(e) {
      // alert('tryAgain');
     //9.4.2
     state.wrongAnswer++
+    ourField.value = "";
     mistakesAllowed.textContent = 2 - state.wrongAnswer;
     problemElement.classList.add("animate-wrong")
     setTimeout(() => problemElement.classList.remove("animate-wrong"), 500)
